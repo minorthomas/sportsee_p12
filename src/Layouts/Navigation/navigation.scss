@@ -1,0 +1,17 @@
+@use '../../style/utils' as *;
+
+.top_nav {
+    background-color: $navbackground;
+    padding: 1em;
+
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        
+        li {
+            color: white;
+        }
+    }
+}
