@@ -2,7 +2,14 @@
 
 .top_nav {
     background-color: $navbackground;
-    padding: 1em;
+    padding: 0em 1em;
+    box-shadow: 0px 3px 10px -4px rgba(0,0,0,0.7);
+
+    .logo {
+        svg {
+            width: 8em;
+        }
+    }
 
     ul {
         display: flex;
@@ -12,6 +19,44 @@
         
         li {
             color: white;
+            cursor: pointer;
         }
+    }
+}
+
+.dashboard_nav {
+    background-color: $navbackground;
+    padding: 1em;
+    width: 4.5em;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5em;
+    justify-content: space-around;
+    align-items: center;
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        li {
+            padding: 0.2em 0.6em;
+            border-radius: 0.3em;
+            background-color: white;
+            cursor: pointer;
+
+            svg {
+                width: 1.4em;
+            }
+        }
+    }
+
+    p {
+        transform: rotate(-90deg);
+        color: white;
+        display: inline;
+        width: max-content;
+        font-size: 0.75em;
     }
 }

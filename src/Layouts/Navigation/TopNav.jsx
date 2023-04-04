@@ -1,16 +1,21 @@
 import React from 'react';
-import { Logo } from '../../Components/Logo';
+import { Logo } from '../../components/Logo';
 import './navigation.scss';
+import { Link } from 'react-router-dom';
 
 export function TopNav() {
     return (
         <nav className='top_nav'>
             <ul>
-                <li>
-                    <Logo/>
+                <li className='logo'>
+                    <Link to='/'>
+                        <Logo/>
+                    </Link>
                 </li>
                 <li>
-                    Accueil
+                    <Link to='/'>
+                        Accueil
+                    </Link>
                 </li>
                 <li>
                     Profil
