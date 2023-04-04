@@ -1,9 +1,9 @@
-import { Dashboard } from './Pages/Dashboard';
+import { Router } from './router';
 
 function App() {
     return (
         <>
-            <Dashboard/>
+            <Router/>
         </>
     );
 }

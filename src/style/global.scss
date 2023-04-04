@@ -9,14 +9,18 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: $navbackground;
+}
+
 .app {
-    max-width: 68.75em; //1100px
+    max-width: 64em; //1024px
     margin: 0 auto;
     font-family: $font;
-    padding: 0 2em;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
+    height: 100vh;
+    background-color: white;
 
     a {
         text-decoration: none;
@@ -32,7 +36,7 @@
     a,
     button {
         cursor: pointer;
-        color: black;
+        color: white;
     }
 
     ul {
