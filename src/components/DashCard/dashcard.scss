@@ -1,0 +1,59 @@
+@use '../../style/utils' as *;
+
+.card {
+    background-color: $background;
+    padding: 1.5em;
+    display: flex;
+    gap: 1em;
+    flex-direction: row;
+    border-radius: 0.3em;
+    width: 100%;
+
+    div:first-child {
+        padding: 0.8em 1em;
+        border-radius: 0.5em;
+
+        svg {
+            width: 1em;
+        }
+    }
+
+    div:last-child {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        p {
+            font-weight: 500;
+        }
+
+        p:last-child {
+            color: #74798c;
+            font-size: 0.8em;
+        }
+    }
+
+    &-red {
+        div:first-child {
+            background-color: rgba(255, 0, 0, 0.1);
+        }
+    }
+
+    &-blue {
+        div:first-child {
+            background-color: rgba(74, 184, 255, 0.1);
+        }
+    }
+
+    &-yellow {
+        div:first-child {
+            background-color: rgba(249, 206, 35, 0.1);
+        }
+    }
+
+    &-pink {
+        div:first-child {
+            background-color: rgba(253, 81, 129, 0.1);
+        }
+    }
+}

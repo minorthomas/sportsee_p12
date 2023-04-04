@@ -1,0 +1,123 @@
+@use '../style/utils' as *;
+
+.dashboard {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    &_content {
+        width: 100%;
+        padding: 1em;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+
+        &_header {
+            display: flex;
+            flex-direction: column;
+            gap: 1em;
+
+            h1 {
+                font-weight: 500;
+
+                span {
+                    color: $primary;
+                }
+            }
+        }
+
+        &_data {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 1em;
+
+            &_graph {
+                display: flex;
+                flex-direction: column;
+                gap: 1em;
+
+                &_average {
+                    background-color: $background;
+                    width: fit-content;
+                    border-radius: 0.3em;
+                    position: relative;
+                    width: 100%;
+
+                    h2 {
+                        font-size: 1em;
+                        position: absolute;
+                        top: 1em;
+                        left: 1.5em;
+                        font-weight: 500;
+                    }
+                }
+
+                &_other {
+                    display: flex;
+                    flex-direction: row;
+                    gap: 1em;
+
+                    & > div {
+                        border-radius: 0.3em;
+                    }
+
+                    &_sessions {
+                        position: relative;
+                        background-color: $primary;
+
+                        h2 {
+                            font-size: 0.9em;
+                            position: absolute;
+                            top: 1em;
+                            left: 1.5em;
+                            font-weight: 500;
+                            max-width: 10em;
+                            color: rgba(255, 255, 255, 0.897);
+                        }
+                    }
+
+                    &_performance {
+                        background-color: #282d30;
+                    }
+
+                    &_score {
+                        background-color: $background;
+                        position: relative;
+
+                        h2 {
+                            font-size: 0.9em;
+                            position: absolute;
+                            top: 1em;
+                            left: 1.5em;
+                            font-weight: 500;
+                            max-width: 10em;
+                        }
+
+                        p {
+                            position: absolute;
+                            width: 5em;
+                            text-align: center;
+                            top: 50%;
+                            left: 50%;
+                            transform: translate(-50%, -50%);
+
+                            span {
+                                font-size: 1.5em;
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                }
+            }
+
+            &_info {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: space-between;
+            }
+        }
+    }
+}
