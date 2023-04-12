@@ -1,22 +1,34 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import {
     PolarAngleAxis,
     PolarGrid,
     Radar,
     RadarChart,
 } from 'recharts';
-import { USER_PERFORMANCE } from '../../data/__mocks__/mockedData';
+import { FormattedUserPerformance } from '../../../data/api/dataFormatter';
+import { UserPerformance } from '../../../data/api/callApi';
 
-export function PerformanceGraph() {
-    const data = USER_PERFORMANCE;
+/**
+ * Used to display a graph using api performance data
+ * 
+ * @param Number - userId 
+ * @return Jsx code
+ */
+export function PerformanceGraph({ userId }) {
+    const { userData, isLoading, error } = UserPerformance(userId);
+    const [formattedData, setFormattedData] = useState(null);
 
-    function normalize() {
-        return data[0].data.map((element) => {
-            return {
-                value: element.value,
-                kind: data[0].kind[element.kind],
-            };
-        });
+    useEffect(() => {
+        const format = FormattedUserPerformance(userData);
+        setFormattedData(format)
+    }, [isLoading, userData])
+
+    if(isLoading) {
+        return
+    }
+
+    if(error) {
+        return <p>Une erreur est survenue...</p>
     }
 
     return (
@@ -25,7 +37,7 @@ export function PerformanceGraph() {
                     width={220}
                     height={220}
                     outerRadius='70%'
-                    data={normalize()}
+                    data={formattedData}
                 >
                     <PolarGrid radialLines={false} />
                     <PolarAngleAxis

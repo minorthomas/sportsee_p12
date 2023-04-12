@@ -1,5 +1,4 @@
-import React from 'react';
-import { USER_ACTIVITY } from '../../data/__mocks__/mockedData';
+import React, { useEffect, useState } from 'react';
 import {
     Bar,
     BarChart,
@@ -10,17 +9,30 @@ import {
     XAxis,
     YAxis,
 } from 'recharts';
+import { UserActivity } from '../../../data/api/callApi';
+import { FormattedUserActivity } from '../../../data/api/dataFormatter';
 
-export function AverageGraph() {
-    const data = USER_ACTIVITY[0].sessions;
+/**
+ * Used to display a graph using api average data
+ * 
+ * @param Number - userId 
+ * @return Jsx code
+ */
+export function AverageGraph({ userId }) {
+    const { userData, isLoading, error } = UserActivity(userId);
+    const [formattedData, setFormattedData] = useState(null);
 
-    function normalize() {
-        return data.map((element, index) => {
-            return {
-                index: index,
-                ...element
-            }
-        })
+    useEffect(() => {
+        const format = FormattedUserActivity(userData);
+        setFormattedData(format);
+    }, [isLoading, userData]);
+
+    if (isLoading) {
+        return;
+    }
+
+    if (error) {
+        return <p>Une erreur est survenue...</p>;
     }
 
     return (
@@ -28,7 +40,7 @@ export function AverageGraph() {
             <h2>Activité quotidienne</h2>
             <ResponsiveContainer width='100%' height={250}>
                 <BarChart
-                    data={normalize()}
+                    data={formattedData}
                     margin={{
                         top: 15,
                         right: 15,

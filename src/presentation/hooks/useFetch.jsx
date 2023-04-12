@@ -1,8 +1,16 @@
 import { useEffect, useState } from 'react';
 
+/**
+ * Used to call data to an api via the fetch api
+ * 
+ * @param String - url
+ * @return Array - data
+ * @return Boolean - isLoading
+ * @return Boolean - error
+ */
 export function useFetch(url) {
     const [isLoading, setIsLoading] = useState(true);
-    const [data, setData] = useState({});
+    const [data, setData] = useState(null);
     const [error, setError] = useState(false);
 
     useEffect(() => {
@@ -27,5 +35,5 @@ export function useFetch(url) {
         fetchData();
     }, [url]);
 
-    return { isLoading, data, error };
+    return { data, isLoading, error };
 }

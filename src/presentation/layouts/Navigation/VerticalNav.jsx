@@ -1,5 +1,10 @@
 import React from 'react';
 
+/**
+ * Used to display the future side navigation located on the left of the app
+ * 
+ * @return Jsx code
+ */
 export function VerticalNav() {
     return (
         <nav className='dashboard_nav'>

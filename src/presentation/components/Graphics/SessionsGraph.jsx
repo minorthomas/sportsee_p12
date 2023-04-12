@@ -1,9 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Line, LineChart, Tooltip, XAxis } from 'recharts';
-import { USER_AVERAGE_SESSIONS } from '../../data/__mocks__/mockedData';
+import { FormattedUserSessions } from '../../../data/api/dataFormatter';
+import { UserSessions } from '../../../data/api/callApi';
 
-export function SessionsGraph() {
-    const data = USER_AVERAGE_SESSIONS[0].sessions;
+/**
+ * Used to display a graph using api session data
+ * 
+ * @param Number - userId 
+ * @return Jsx code
+ */
+export function SessionsGraph({ userId }) {
+    const { userData, isLoading, error } = UserSessions(userId)
+    const [formattedData, setFormattedData] = useState(null)
+
+    useEffect(() => {
+        const format = FormattedUserSessions(userData)
+        setFormattedData(format);
+    }, [isLoading, userData])
+
+    if (isLoading) {
+        return
+    }
+
+    if(error) {
+        return <p>Une erreur est survenue...</p>
+    }
 
     return (
         <div className='dashboard_content_data_graph_other_sessions'>
@@ -11,7 +32,7 @@ export function SessionsGraph() {
             <LineChart
                 width={220}
                 height={220}
-                data={data}
+                data={formattedData}
                 margin={{
                     top: 50,
                     right: 30,
