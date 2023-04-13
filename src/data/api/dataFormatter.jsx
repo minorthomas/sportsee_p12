@@ -1,3 +1,9 @@
+/**
+ * Used to format retrieved keyData as a parameter
+ * 
+ * @param Array - data
+ * @return Array
+ */
 export function FormattedKeyData(data) {
     const keyData = data && data.keyData;
     return (
@@ -106,6 +112,12 @@ export function FormattedKeyData(data) {
     );
 }
 
+/**
+ * Used to format the activities retrieved as parameters
+ * 
+ * @param Array - data
+ * @return Array
+ */
 export function FormattedUserActivity(data) {
     const sessions = data && data.sessions;
 
@@ -119,12 +131,24 @@ export function FormattedUserActivity(data) {
     }
 }
 
+/**
+ * Used to format the sessions retrieved as parameters
+ * 
+ * @param Array - data
+ * @return Array
+ */
 export function FormattedUserSessions(data) {
     const sessions = data && data.sessions;
 
     return sessions;
 }
 
+/**
+ * Used to format the performance retrieved as parameters
+ * 
+ * @param Array - data
+ * @return Array
+ */
 export function FormattedUserPerformance(data) {
     const kind = data && data.data;
 
@@ -138,6 +162,12 @@ export function FormattedUserPerformance(data) {
     }
 }
 
+/**
+ * Used to format the score retrieved as parameters
+ * 
+ * @param Array - data
+ * @return Array
+ */
 export function FormattedUserScore(data) {
     return [
         {
@@ -154,6 +184,12 @@ export function FormattedUserScore(data) {
     ];
 }
 
+/**
+ * Used to format retrieved user data as a parameter
+ * 
+ * @param Array - data
+ * @return Array
+ */
 export function FormattedUserInfo(data) {
     const userInfos = data && data.userInfos;
     

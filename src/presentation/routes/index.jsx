@@ -11,6 +11,7 @@ export function Router() {
     return (
         <Routes>
             <Route path='/profile/:id' element={<Profile/>}/>
+            {/* Navigates to the page of the user with id "12", if the url is not correct */}
             <Route path='*' element={<Navigate replace to='/profile/12' />}/>
         </Routes>
     );

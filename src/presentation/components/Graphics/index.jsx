@@ -6,21 +6,30 @@ import { ScoreGraph } from './ScoreGraph';
 import { LateralInfo } from './UserInfoCard/LateralInfo';
 import { FormattedKeyData } from '../../../data/api/dataFormatter';
 import { UserInfo } from '../../../data/api/callApi';
+import { useNavigate } from 'react-router-dom';
 
 /**
  * Used to display all charts and keyData located to the right of the app
- * 
- * @param Number - userId 
+ *
+ * @param Number - userId
  * @return Jsx code
  */
 export function Graphics({ userId }) {
     const { userData, isLoading, error } = UserInfo(userId);
     const [formattedData, setFormattedData] = useState(null);
+    const navigate = useNavigate();
 
+    /**Calls the formatting function to format the data retrieved via the id as a parameter
+     * and update the data when the state user Data changes
+     */
     useEffect(() => {
-        const format = FormattedKeyData(userData);
-        setFormattedData(format);
-    }, [isLoading, userData]);
+        if (!userData) {
+            return navigate('/profile/12');
+        } else {
+            const format = FormattedKeyData(userData);
+            setFormattedData(format);
+        }
+    }, [isLoading, userData, navigate]);
 
     if (isLoading) {
         return;
@@ -33,11 +42,11 @@ export function Graphics({ userId }) {
     return (
         <main className='dashboard_content_data'>
             <div className='dashboard_content_data_graph'>
-                <AverageGraph userId={userId}/>
+                <AverageGraph userId={userId} />
                 <div className='dashboard_content_data_graph_other'>
-                    <SessionsGraph userId={userId}/>
-                    <PerformanceGraph userId={userId}/>
-                    <ScoreGraph userId={userId}/>
+                    <SessionsGraph userId={userId} />
+                    <PerformanceGraph userId={userId} />
+                    <ScoreGraph userId={userId} />
                 </div>
             </div>
             <ul className='dashboard_content_data_info'>

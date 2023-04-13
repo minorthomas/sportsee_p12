@@ -13,6 +13,9 @@ export function ScoreGraph({ userId }) {
     const { userData, isLoading, error } = UserInfo(userId);
     const [formattedData, setFormattedData] = useState(null);
 
+    /**Calls the formatting function to format the data retrieved via the id as a parameter
+    * and update the data when the state user Data changes
+    */
     useEffect(() => {
         const format = FormattedUserScore(userData);
         setFormattedData(format)

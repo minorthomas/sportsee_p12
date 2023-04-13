@@ -12,9 +12,8 @@ import { useParams } from 'react-router-dom';
  * @return Jsx code
  */
 export function Profile() {
+    //Retrieve the "id" parameter in the url, allowing to retrieve the data of the correct user
     const { id } = useParams();
-
-    console.log(id);
 
     return (
         <>

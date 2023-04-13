@@ -17,6 +17,11 @@ export function useFetch(url) {
         if (!url) return;
         setIsLoading(true);
 
+        /**
+         * Get data via fetch api
+         * convert data to json
+         * and add the data in the "data" state
+         */
         async function fetchData() {
             try {
                 const response = await fetch(url);
