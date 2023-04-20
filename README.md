@@ -1,6 +1,6 @@
-# Sportsee : le tableau de board des sportifs
+# Sportsee : sports scoreboard
 
-Sportsee est un tableau de bord concentré sur le sport, permettant un suivi de vos activités physiques, grâce à des graphiques mis à jour en temps réel. Ayez un oeil sur vos activités chaque jour, vos performances, vos points forts et vos points faibles etc...
+Sportsee is a dashboard focused on sport, allowing monitoring of your physical activities, thanks to graphs updated in real time. Have an eye on your activities every day, your performance, your strengths and your weak points etc...
 
 ## Technologies
 - React
@@ -8,17 +8,19 @@ Sportsee est un tableau de bord concentré sur le sport, permettant un suivi de 
 - JSX
 - React-router-dom
 
-## Installer l'application
-1. Clonez le repo git ou téléchargez le dossier sur votre machine
-2. Lancez le repo sur votre editeur de code
-3. Ouvrez le terminal est entrez la commande __npm i__
-4. Dans le terminal, entrez la commande __npm start__
+## Install the app
+1. Clone the git repo or download the folder to your machine
+2. Launch the repo on your code editor
+3. Open the terminal and enter the command __npm i__
+4. Then enter the command __npm start__
 
-### Utiliser l'application
-- Naviguez entre les différents utilisateurs via l'url (seulement 2 utilisateurs) changez le nombre de l'url par un autre nombre (12 ou 18) puis faites la touche __Enter__
+### Use the app
+- Navigate between the different users via the url (only 2 users) change the number of the url to another number (12 or 18) then press the __Enter__ key
 
-__/!\Veillez à bien avoir Node.js d'installé sur votre machine__
+__/!\Make sure you have Node.js installed on your machine__
 
-## Equipe
+## Team
 
-Développeur - Minor Thomas
+Developer - Minor Thomas
+
+__To see the site documentation launch the HTML files in the docs/ folder__
