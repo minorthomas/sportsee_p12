@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
 import { FormattedUserPerformance } from '../../../data/api/dataFormatter';
 import { UserPerformance } from '../../../data/api/callApi';
+import PropTypes from 'prop-types';
 
 export function PerformanceGraph({ userId }) {
     const { userData, isLoading, error } = UserPerformance(userId);
@@ -53,3 +54,7 @@ export function PerformanceGraph({ userId }) {
         </div>
     );
 }
+
+PerformanceGraph.propTypes = {
+    userId: PropTypes.string,
+};

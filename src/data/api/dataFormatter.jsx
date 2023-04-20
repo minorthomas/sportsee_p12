@@ -1,6 +1,6 @@
 /**
  * Used to format retrieved keyData as a parameter
- * 
+ *
  * @param Array - data
  * @return Array
  */
@@ -9,7 +9,7 @@ export function FormattedKeyData(data) {
     return (
         keyData && [
             {
-                value: keyData.calorieCount ? keyData.calorieCount : 'No data',
+                value: keyData.calorieCount ? keyData.calorieCount : 0,
                 type: 'Calories',
                 color: 'red',
                 unit: keyData.calorieCount ? 'kCal' : ' ',
@@ -29,7 +29,7 @@ export function FormattedKeyData(data) {
                 ),
             },
             {
-                value: keyData.proteinCount ? keyData.proteinCount : 'No data',
+                value: keyData.proteinCount ? keyData.proteinCount : 0,
                 type: 'Proteines',
                 color: 'blue',
                 unit: keyData.proteinCount ? 'g' : '',
@@ -51,7 +51,7 @@ export function FormattedKeyData(data) {
             {
                 value: keyData.carbohydrateCount
                     ? keyData.carbohydrateCount
-                    : 'No data',
+                    : 0,
                 type: 'Glucides',
                 color: 'yellow',
                 unit: keyData.carbohydrateCount ? 'g' : '',
@@ -79,7 +79,7 @@ export function FormattedKeyData(data) {
                 ),
             },
             {
-                value: keyData.lipidCount ? keyData.lipidCount : 'No data',
+                value: keyData.lipidCount ? keyData.lipidCount : 0,
                 type: 'Lipides',
                 color: 'pink',
                 unit: keyData.lipidCount ? 'g' : '',
@@ -114,7 +114,7 @@ export function FormattedKeyData(data) {
 
 /**
  * Used to format the activities retrieved as parameters
- * 
+ *
  * @param Array - data
  * @return Array
  */
@@ -133,7 +133,7 @@ export function FormattedUserActivity(data) {
 
 /**
  * Used to format the sessions retrieved as parameters
- * 
+ *
  * @param Array - data
  * @return Array
  */
@@ -145,7 +145,7 @@ export function FormattedUserSessions(data) {
 
 /**
  * Used to format the performance retrieved as parameters
- * 
+ *
  * @param Array - data
  * @return Array
  */
@@ -164,7 +164,7 @@ export function FormattedUserPerformance(data) {
 
 /**
  * Used to format the score retrieved as parameters
- * 
+ *
  * @param Array - data
  * @return Array
  */
@@ -186,13 +186,13 @@ export function FormattedUserScore(data) {
 
 /**
  * Used to format retrieved user data as a parameter
- * 
+ *
  * @param Array - data
  * @return Array
  */
 export function FormattedUserInfo(data) {
     const userInfos = data && data.userInfos;
-    
+
     return {
         id: data && data.id,
         firstName: userInfos && userInfos.firstName,

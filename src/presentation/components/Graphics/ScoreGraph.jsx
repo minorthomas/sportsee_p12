@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { RadialBar, RadialBarChart } from 'recharts';
 import { FormattedUserScore } from '../../../data/api/dataFormatter';
 import { UserInfo } from '../../../data/api/callApi';
@@ -52,3 +53,7 @@ export function ScoreGraph({ userId }) {
         </div>
     );
 }
+
+ScoreGraph.propTypes = {
+    userId: PropTypes.string,
+};

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { UserInfo } from '../../data/api/callApi';
 
 export function Header({ userId }) {
@@ -26,3 +27,7 @@ export function Header({ userId }) {
         </header>
     );
 }
+
+Header.propTypes = {
+    userId: PropTypes.string,
+};

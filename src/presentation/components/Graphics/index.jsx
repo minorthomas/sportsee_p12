@@ -7,6 +7,7 @@ import { LateralInfo } from './UserInfoCard/LateralInfo';
 import { FormattedKeyData } from '../../../data/api/dataFormatter';
 import { UserInfo } from '../../../data/api/callApi';
 import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 export function Graphics({ userId }) {
     const { userData, isLoading, error } = UserInfo(userId);
@@ -61,3 +62,7 @@ export function Graphics({ userId }) {
         </main>
     );
 }
+
+Graphics.propTypes = {
+    userId: PropTypes.string,
+};

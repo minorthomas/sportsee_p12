@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import {
     Bar,
     BarChart,
@@ -105,3 +106,7 @@ export function AverageGraph({ userId }) {
         </div>
     );
 }
+
+AverageGraph.propTypes = {
+    userId: PropTypes.string,
+};

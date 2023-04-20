@@ -1,26 +1,27 @@
 import React, { useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { Line, LineChart, Tooltip, XAxis } from 'recharts';
 import { FormattedUserSessions } from '../../../data/api/dataFormatter';
 import { UserSessions } from '../../../data/api/callApi';
 
 export function SessionsGraph({ userId }) {
-    const { userData, isLoading, error } = UserSessions(userId)
-    const [formattedData, setFormattedData] = useState(null)
+    const { userData, isLoading, error } = UserSessions(userId);
+    const [formattedData, setFormattedData] = useState(null);
 
     /**Calls the formatting function to format the data retrieved via the id as a parameter
-    * and update the data when the state user Data changes
-    */
+     * and update the data when the state user Data changes
+     */
     useEffect(() => {
-        const format = FormattedUserSessions(userData)
+        const format = FormattedUserSessions(userData);
         setFormattedData(format);
-    }, [isLoading, userData])
+    }, [isLoading, userData]);
 
     if (isLoading) {
-        return
+        return;
     }
 
-    if(error) {
-        return <p>Une erreur est survenue...</p>
+    if (error) {
+        return <p>Une erreur est survenue...</p>;
     }
 
     return (
@@ -78,3 +79,7 @@ export function SessionsGraph({ userId }) {
         </div>
     );
 }
+
+SessionsGraph.propTypes = {
+    userId: PropTypes.string,
+};
