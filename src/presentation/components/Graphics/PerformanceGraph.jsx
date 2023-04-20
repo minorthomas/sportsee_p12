@@ -3,12 +3,6 @@ import { PolarAngleAxis, PolarGrid, Radar, RadarChart } from 'recharts';
 import { FormattedUserPerformance } from '../../../data/api/dataFormatter';
 import { UserPerformance } from '../../../data/api/callApi';
 
-/**
- * Used to display a graph using api performance data
- *
- * @param Number - userId
- * @return Jsx code
- */
 export function PerformanceGraph({ userId }) {
     const { userData, isLoading, error } = UserPerformance(userId);
     const [formattedData, setFormattedData] = useState(null);

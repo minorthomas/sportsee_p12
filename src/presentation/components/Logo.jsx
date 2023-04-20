@@ -1,10 +1,5 @@
 import React from 'react';
 
-/**
- * Used to display the Site Logo located in the top navigation
- * 
- * @return Jsx code
- */
 export function Logo() {
     return (
         <svg

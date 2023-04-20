@@ -3,11 +3,6 @@ import { Logo } from '../../components/Logo';
 import './navigation.scss';
 import { Link } from 'react-router-dom';
 
-/**
- * Used to display the top navigation and its various links
- * 
- * @return Jsx code
- */
 export function TopNav() {
     return (
         <nav className='top_nav'>

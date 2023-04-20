@@ -3,12 +3,6 @@ import { RadialBar, RadialBarChart } from 'recharts';
 import { FormattedUserScore } from '../../../data/api/dataFormatter';
 import { UserInfo } from '../../../data/api/callApi';
 
-/**
- * Used to display a graph using api score data
- * 
- * @param Number - userId 
- * @return Jsx code
- */
 export function ScoreGraph({ userId }) {
     const { userData, isLoading, error } = UserInfo(userId);
     const [formattedData, setFormattedData] = useState(null);

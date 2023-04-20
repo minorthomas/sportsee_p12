@@ -6,11 +6,6 @@ import { Header } from '../../components/Header';
 import { Graphics } from '../../components/Graphics/index';
 import { useParams } from 'react-router-dom';
 
-/**
- * Used to display the profile page and the components it contains
- * 
- * @return Jsx code
- */
 export function Profile() {
     //Retrieve the "id" parameter in the url, allowing to retrieve the data of the correct user
     const { id } = useParams();

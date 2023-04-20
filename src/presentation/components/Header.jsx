@@ -1,12 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { UserInfo } from '../../data/api/callApi';
 
-/**
- * Used to display page title with username
- * 
- * @param Number - userId
- * @return Jsx code
- */
 export function Header({ userId }) {
     const { userData, isLoading, error } = UserInfo(userId);
     const [name, setName] = useState(null);

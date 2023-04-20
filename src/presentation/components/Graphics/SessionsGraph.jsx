@@ -3,12 +3,6 @@ import { Line, LineChart, Tooltip, XAxis } from 'recharts';
 import { FormattedUserSessions } from '../../../data/api/dataFormatter';
 import { UserSessions } from '../../../data/api/callApi';
 
-/**
- * Used to display a graph using api session data
- * 
- * @param Number - userId 
- * @return Jsx code
- */
 export function SessionsGraph({ userId }) {
     const { userData, isLoading, error } = UserSessions(userId)
     const [formattedData, setFormattedData] = useState(null)

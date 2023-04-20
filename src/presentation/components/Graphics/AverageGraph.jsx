@@ -12,12 +12,6 @@ import {
 import { UserActivity } from '../../../data/api/callApi';
 import { FormattedUserActivity } from '../../../data/api/dataFormatter';
 
-/**
- * Used to display a graph using api average data
- *
- * @param Number - userId
- * @return Jsx code
- */
 export function AverageGraph({ userId }) {
     const { userData, isLoading, error } = UserActivity(userId);
     const [formattedData, setFormattedData] = useState(null);

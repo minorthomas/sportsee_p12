@@ -8,12 +8,6 @@ import { FormattedKeyData } from '../../../data/api/dataFormatter';
 import { UserInfo } from '../../../data/api/callApi';
 import { useNavigate } from 'react-router-dom';
 
-/**
- * Used to display all charts and keyData located to the right of the app
- *
- * @param Number - userId
- * @return Jsx code
- */
 export function Graphics({ userId }) {
     const { userData, isLoading, error } = UserInfo(userId);
     const [formattedData, setFormattedData] = useState(null);
@@ -23,7 +17,7 @@ export function Graphics({ userId }) {
      * and update the data when the state user Data changes
      */
     useEffect(() => {
-        if (!userData) {
+        if (!userData && !isLoading) {
             return navigate('/profile/12');
         } else {
             const format = FormattedKeyData(userData);
